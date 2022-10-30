@@ -22,3 +22,7 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn build
+      - name: Deploy Lib
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ultimate-i18n-js/lib
