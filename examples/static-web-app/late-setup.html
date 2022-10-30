@@ -22,7 +22,12 @@
 		<a href="javascript:UltimateI18n.set('es');">es</a>
 	</p>
 
-	<script src="../../ultimate-i18n-js/lib/index.js"></script>
+	<script>
+		const libUrl = location.hostname.includes('localhost')
+			? '../../ultimate-i18n-js/lib/index.js'
+			: 'https://cdn.jsdelivr.net/npm/ultimate-i18n-js@0.0.1/lib/index.min.js';
+		document.write(`<script src="${libUrl}"><\/script>`);
+	</script>
 	<script>
 		// This approach is recommended only for single page apps, where the framework renders a whole app.
 		UltimateI18n.setup();

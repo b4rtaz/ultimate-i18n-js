@@ -9,8 +9,17 @@ Ultimate internationalization framework for web applications.
 * Automatic a user's language detection.
 * It remembers a language change (uses local storage).
 * JavaScript / TypeScript support.
+* Support all modern browsers (it uses the [MutationObserver](https://caniuse.com/mutationobserver) internally).
 
-### 🚀 Use with static HTML web app
+#### 🤩 Online Examples
+
+* [Basic](./examples/static-web-app/basic.html)
+* [Create Element](./examples/static-web-app/create-element.html)
+* [Document Write](./examples/static-web-app/document-write.html)
+* [Dynamic Text](./examples/static-web-app/dynamic-text.html)
+* [Late Setup](./examples/static-web-app/late-setup.html)
+
+## 🚀 Use with static HTML web app
 
 Set your default language code in the `html` tag.
 
@@ -52,7 +61,7 @@ UltimateI18n.set('es');
 
 ➡ Check [examples for static HTML web apps](examples/static-web-app)
 
-### 🚀 Use with a module bundler
+## 🚀 Use with a module bundler
 
 Install this package.
 
