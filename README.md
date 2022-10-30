@@ -13,11 +13,11 @@ Ultimate internationalization framework for web applications.
 
 #### 🤩 Online Examples
 
-* [Basic](./examples/static-web-app/basic.html)
-* [Create Element](./examples/static-web-app/create-element.html)
-* [Document Write](./examples/static-web-app/document-write.html)
-* [Dynamic Text](./examples/static-web-app/dynamic-text.html)
-* [Late Setup](./examples/static-web-app/late-setup.html)
+* [Basic](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/basic.html)
+* [Create Element](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/create-element.html)
+* [Document Write](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/document-write.html)
+* [Dynamic Text](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/dynamic-text.html)
+* [Late Setup](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/late-setup.html)
 
 ## 🚀 Use with static HTML web app
 
