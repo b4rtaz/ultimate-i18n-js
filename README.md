@@ -1,5 +1,7 @@
 # Ultimate I18n JS 🤯
 
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fb4rtaz%2Fultimate-i18n-js%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/b4rtaz/ultimate-i18n-js/goto?ref=main) [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE) [![View this project on NPM](https://img.shields.io/npm/v/ultimate-i18n-js.svg)](https://npmjs.org/package/ultimate-i18n-js) [![Twitter: b4rtaz](https://img.shields.io/twitter/follow/b4rtaz.svg?style=social)](https://twitter.com/b4rtaz)
+
 Ultimate internationalization framework for web applications. 
 
 * Super simple & easy.
@@ -19,7 +21,7 @@ Ultimate internationalization framework for web applications.
 * [Dynamic Text](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/dynamic-text.html)
 * [Late Setup](https://b4rtaz.github.io/ultimate-i18n-js/examples/static-web-app/late-setup.html)
 
-## 🚀 Use with static HTML web app
+## 🚀 Use with Static HTML Web App
 
 Set your default language code in the `html` tag.
 
@@ -61,7 +63,7 @@ UltimateI18n.set('es');
 
 ➡ Check [examples for static HTML web apps](examples/static-web-app)
 
-## 🚀 Use with a module bundler
+## 🚀 Use with Module Bundler
 
 Install this package.
 
