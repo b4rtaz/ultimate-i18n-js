@@ -108,8 +108,8 @@ UltimateI18n.set('es');
 ## ⚒ API
 
 * `UltimateI18n.set('es')` - Changes the current language.
-* `UltimateI18n.get()` - Read the current language.
-* `UltimateI18n.setup()` - Initialize the framework. This step is required only for a late setup.
+* `UltimateI18n.get()` - Reads the current language.
+* `UltimateI18n.setup()` - Initializes the framework. This step is required only for a late setup.
 * `UltimateI18n.isSupported` - Returns `true` if the framework is enabled, otherwise `false`.
 
 ## 👷‍♂️ TODO
