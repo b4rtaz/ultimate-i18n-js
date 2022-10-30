@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Late setup</title>
+</head>
+<body>
+
+	<h1
+		i18n-es="Hola Mundo">
+		Hello World
+	</h1>
+
+	<p>
+		<span
+			i18n-pl="Zmień język:"
+			i18n-es="Cambiar idioma:">
+			Change language:
+		</span>
+
+		<a href="javascript:UltimateI18n.set('en');">en</a> /
+		<a href="javascript:UltimateI18n.set('es');">es</a>
+	</p>
+
+	<script src="../../ultimate-i18n-js/lib/index.js"></script>
+	<script>
+		// This approach is recommended only for single page apps, where the framework renders a whole app.
+		UltimateI18n.setup();
+	</script>
+
+</body>
+</html>

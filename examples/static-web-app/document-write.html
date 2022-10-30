@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document write</title>
+	<script src="../../ultimate-i18n-js/lib/index.js"></script>
+</head>
+<body>
+
+	<script>
+		document.write(
+			`<h1
+				i18n-pl="Witaj świecie"
+				i18n-es="Hola Mundo">
+				Hello World
+			</h1>
+
+			<section>
+				<span
+					i18n-pl="Kocham czerwony"
+					i18n-es="Amo el rojo">
+					I love red
+				</span>
+			</section>`);
+	</script>
+
+	<p>
+		<span
+			i18n-pl="Zmień język:"
+			i18n-es="Cambiar idioma:">
+			Change language:
+		</span>
+
+		<a href="javascript:UltimateI18n.set('pl');">pl</a> /
+		<a href="javascript:UltimateI18n.set('es');">es</a> /
+		<a href="javascript:UltimateI18n.set('en');">en</a>
+	</p>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Basic</title>
+	<script src="../../ultimate-i18n-js/lib/index.js"></script>
+</head>
+<body>
+
+	<h1
+		i18n-pl="Witaj świecie"
+		i18n-es="Hola Mundo">
+		Hello World
+	</h1>
+
+	<p
+		i18n-pl="Miło cię poznać."
+		i18n-es="Gusto en conocerlo.">
+		Nice to meet you.
+	</p>
+
+	<p>
+		<label
+			i18n-pl="Ulubiony owoc"
+			i18n-es="Fruta favorita">
+			Favorite fruit
+		</label>
+
+		<select>
+			<option value="1"
+				i18n-pl="Jabłko"
+				i18n-es="Manzana">
+				Apple
+			</option>
+			<option value="2"
+				i18n-pl="Gruszka"
+				i18n-es="Pera">
+				Pear
+			</option>
+		</select>
+	</p>
+
+	<p>
+		<span
+			i18n-pl="Zmień język:"
+			i18n-es="Cambiar idioma:">
+			Change language:
+		</span>
+
+		<button onclick="UltimateI18n.set('en');">EN</button>
+		<button onclick="UltimateI18n.set('es');">ES</button>
+		<button onclick="UltimateI18n.set('pl');">PL</button>
+	</p>
+
+</body>
+</html>

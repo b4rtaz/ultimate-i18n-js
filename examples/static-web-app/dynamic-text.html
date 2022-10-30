@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dynamic text</title>
+	<script src="../../ultimate-i18n-js/lib/index.js"></script>
+</head>
+<body>
+	<div id="time"></div>
+
+	<script>
+		const placeholder = document.getElementById('time');
+
+		function timePad(value) {
+			return String(value).padStart(2, '0');
+		}
+
+		function fill() {
+			const now = new Date();
+			const time = `${timePad(now.getHours())}:${timePad(now.getMinutes())}:${timePad(now.getSeconds())}`;
+
+			const newText = document.createElement('span');
+			newText.innerText = `Current time: ${time}`;
+			newText.setAttribute('i18n-pl', `Aktualny czas: ${time}`);
+			newText.setAttribute('i18n-es', `Tiempo actual: ${time}`);
+
+			if (placeholder.children.length === 0) {
+				placeholder.appendChild(newText);
+			} else {
+				placeholder.children[0].replaceWith(newText);
+			}
+		}
+
+		fill();
+		setInterval(fill, 1000);
+	</script>
+
+	<p>
+		<span
+			i18n-pl="Zmień język:"
+			i18n-es="Cambiar idioma:">
+			Change language:
+		</span>
+
+		<button onclick="UltimateI18n.set('en');">EN</button>
+		<button onclick="UltimateI18n.set('es');">ES</button>
+		<button onclick="UltimateI18n.set('pl');">PL</button>
+	</p>
+
+</body>
+</html>
