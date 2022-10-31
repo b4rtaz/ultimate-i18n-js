@@ -4,7 +4,7 @@
 
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fb4rtaz%2Fultimate-i18n-js%2Fbadge%3Fref%3Dmain&style=flat)](https://actions-badge.atrox.dev/b4rtaz/ultimate-i18n-js/goto?ref=main) [![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE) [![View this project on NPM](https://img.shields.io/npm/v/ultimate-i18n-js.svg)](https://npmjs.org/package/ultimate-i18n-js) [![Twitter: b4rtaz](https://img.shields.io/twitter/follow/b4rtaz.svg?style=social)](https://twitter.com/b4rtaz)
 
-Ultimate internationalization framework for web applications. 
+Ultimate internationalization library for web applications. 
 
 * Super simple & easy.
 * Less than 1KB (minified and gziped).
@@ -111,8 +111,8 @@ UltimateI18n.set('es');
 
 * `UltimateI18n.set('es')` - Changes the current language.
 * `UltimateI18n.get()` - Reads the current language.
-* `UltimateI18n.setup()` - Initializes the framework. This step is required only for a late setup.
-* `UltimateI18n.isSupported` - Returns `true` if the framework is enabled, otherwise `false`.
+* `UltimateI18n.setup()` - Initializes the library. This step is required only for a late setup.
+* `UltimateI18n.isSupported` - Returns `true` if the library is enabled, otherwise `false`.
 
 ## 👷‍♂️ TODO
 
