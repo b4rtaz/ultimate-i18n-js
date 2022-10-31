@@ -1,7 +1,7 @@
 {
 	"name": "ultimate-i18n-js",
-	"version": "0.0.2",
-	"description": "Ultimate internationalization framework for web applications.",
+	"version": "0.0.3",
+	"description": "Ultimate internationalization library for web applications.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/b4rtaz/ultimate-i18n-js.git"

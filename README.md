@@ -35,7 +35,7 @@ Add this library as **the first script** in your `<head>` section.
 
 ```html
 <head>
-   <script src="https://cdn.jsdelivr.net/npm/ultimate-i18n-js@0.0.1/lib/index.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/ultimate-i18n-js@0.0.3/lib/index.min.js"></script>
    ...
 </head>
 ```
