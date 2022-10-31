@@ -1,45 +1,61 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Basic</title>
+
 	<script>
 		const libUrl = location.hostname.includes('localhost')
 			? '../../ultimate-i18n-js/lib/index.js'
-			: 'https://cdn.jsdelivr.net/npm/ultimate-i18n-js@0.0.1/lib/index.min.js';
+			: 'https://cdn.jsdelivr.net/npm/ultimate-i18n-js@0.0.2/lib/index.min.js';
 		document.write(`<script src="${libUrl}"><\/script>`);
 	</script>
+
+	<title
+		i18n-pl="Podstawowy przykład"
+		i18n-es="Ejemplo básico"
+		i18n-ar="مثال أساسي">
+		Basic Example
+	</title>
+
+	<style>
+		html[lang=ar] {direction: rtl;}
+	</style>
 </head>
 <body>
 
 	<h1
 		i18n-pl="Witaj świecie"
-		i18n-es="Hola Mundo">
+		i18n-es="Hola Mundo"
+		i18n-ar="مرحبا بالعالم">
 		Hello World
 	</h1>
 
 	<p
 		i18n-pl="Miło cię poznać."
-		i18n-es="Gusto en conocerlo.">
+		i18n-es="Gusto en conocerlo."
+		i18n-ar="سعيد بلقائك.">
 		Nice to meet you.
 	</p>
 
 	<p>
 		<label
 			i18n-pl="Ulubiony owoc"
-			i18n-es="Fruta favorita">
+			i18n-es="Fruta favorita"
+			i18n-ar="الفاكهة المفضلة">
 			Favorite fruit
 		</label>
 
 		<select>
 			<option value="1"
 				i18n-pl="Jabłko"
-				i18n-es="Manzana">
+				i18n-es="Manzana"
+				i18n-ar="تفاحة">
 				Apple
 			</option>
 			<option value="2"
 				i18n-pl="Gruszka"
-				i18n-es="Pera">
+				i18n-es="Pera"
+				i18n-ar="بيرا">
 				Pear
 			</option>
 		</select>
@@ -48,13 +64,15 @@
 	<p>
 		<span
 			i18n-pl="Zmień język:"
-			i18n-es="Cambiar idioma:">
+			i18n-es="Cambiar idioma:"
+			i18n-ar="تغيير اللغة:">
 			Change language:
 		</span>
 
 		<button onclick="UltimateI18n.set('en');">EN</button>
 		<button onclick="UltimateI18n.set('es');">ES</button>
 		<button onclick="UltimateI18n.set('pl');">PL</button>
+		<button onclick="UltimateI18n.set('ar');">AR</button>
 	</p>
 
 </body>

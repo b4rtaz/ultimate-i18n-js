@@ -1,6 +1,6 @@
 {
 	"name": "ultimate-i18n-js",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "Ultimate internationalization framework for web applications.",
 	"repository": {
 		"type": "git",
@@ -14,6 +14,7 @@
 		"lib/index.min.js"
 	],
 	"scripts": {
+		"prepare": "cp -f ../README.md ./README.md && yarn build",
 		"build": "rollup -c",
 		"build:watch": "rollup -c --watch",
 		"prettier": "prettier --check ./src",

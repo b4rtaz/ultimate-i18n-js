@@ -1,9 +1,9 @@
 const key = 'ultimateI18n';
 
-export function tryGetChosenLang(): string | undefined {
+export function readSelectedLang(): string | undefined {
 	return localStorage[key];
 }
 
-export function setChosenLang(lang: string) {
+export function writeSelectedLang(lang: string) {
 	localStorage[key] = lang;
 }

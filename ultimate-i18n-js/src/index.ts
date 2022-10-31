@@ -1,24 +1,28 @@
-import { getElementsWithAttribute } from './get-elements-with-attr';
-import { setChosenLang, tryGetChosenLang } from './storage';
+import { attr, AttrPointer } from './attr';
+import { writeSelectedLang, readSelectedLang } from './storage';
 
 export const isSupported = typeof MutationObserver === 'function';
 
 const htmlElement = document.getElementsByTagName('html')[0];
 const defaultLanguage = htmlElement.getAttribute('lang') || 'en';
-const defaultAttrName = `i18n-${defaultLanguage}`;
+const defaultAttr = attr(defaultLanguage);
 const lockAttrName = 'i18n-lock';
 
-let currentLanguage: string = tryGetChosenLang() || (navigator.language.split('-')[0]);
-let currentAttrName = `i18n-${currentLanguage}`;
+let currentLanguage: string = readSelectedLang() || navigator.language.split('-')[0];
+let currentAttr = attr(currentLanguage);
 let currentLock = '1';
 
-function tryApplyDirectly(element: HTMLElement, attrName: string): boolean {
-	const langAttr = element.attributes.getNamedItem(attrName);
+function updateHtmlLang(lang: string) {
+	htmlElement.setAttribute('lang', lang);
+}
+
+function applyDirectly(element: HTMLElement, attr: AttrPointer): boolean {
+	const langAttr = element.attributes.getNamedItem(attr.name);
 	if (langAttr) {
 		const lock = element.getAttribute(lockAttrName);
 		if (lock === null || lock !== currentLock) {
 			if (lock === null) {
-				element.setAttribute(defaultAttrName, element.innerText);
+				element.setAttribute(defaultAttr.name, element.innerText);
 			}
 			element.setAttribute(lockAttrName, currentLock);
 			element.innerText = langAttr.value;
@@ -28,9 +32,14 @@ function tryApplyDirectly(element: HTMLElement, attrName: string): boolean {
 	return false;
 }
 
-function tryApplyDeeply(element: HTMLElement, attrName: string) {
-	tryApplyDirectly(element, attrName);
-	getElementsWithAttribute(element, attrName, (child) => tryApplyDirectly(child, attrName));
+function applyDeeply(element: HTMLElement, attr: AttrPointer) {
+	applyDirectly(element, attr);
+
+	const elements = element.querySelectorAll(attr.selector);
+	const count = elements.length;
+	for (let i = 0; i < count; i++) {
+		applyDirectly(elements[i] as HTMLElement, attr);
+	}
 }
 
 function callback(mutations: MutationRecord[]) {
@@ -39,7 +48,7 @@ function callback(mutations: MutationRecord[]) {
 			for (let index = 0; index < mutation.addedNodes.length; index++) {
 				const node = mutation.addedNodes[index];
 				if (node.nodeType === Node.ELEMENT_NODE) {
-					tryApplyDeeply(node as HTMLElement, currentAttrName);
+					applyDeeply(node as HTMLElement, currentAttr);
 				}
 			}
 		}
@@ -47,20 +56,25 @@ function callback(mutations: MutationRecord[]) {
 }
 
 function replace() {
-	const elements = document.querySelectorAll(`[${lockAttrName}], [${currentAttrName}]`);
-	for (let index = 0; index < elements.length; index++) {
+	const elements = document.querySelectorAll(`[${lockAttrName}], ${currentAttr.selector}`);
+	const count = elements.length;
+	for (let index = 0; index < count; index++) {
 		const element = elements[index] as HTMLElement;
-		if (!tryApplyDirectly(element, currentAttrName)) {
-			tryApplyDirectly(element, defaultAttrName);
+		if (!applyDirectly(element, currentAttr)) {
+			applyDirectly(element, defaultAttr);
 		}
 	}
 }
 
 if (isSupported) {
+	if (defaultLanguage !== currentLanguage) {
+		updateHtmlLang(currentLanguage);
+	}
+
 	const observer = new MutationObserver(callback);
 	observer.observe(htmlElement, {
 		childList: true,
-		subtree: true,
+		subtree: true
 	});
 }
 
@@ -69,9 +83,10 @@ export function set(lang: string) {
 		throw new Error('UltimateI18n is not supported');
 	}
 
-	setChosenLang(lang);
+	writeSelectedLang(lang);
+	updateHtmlLang(lang);
 	currentLanguage = lang;
-	currentAttrName = `i18n-${lang}`;
+	currentAttr = attr(lang);
 	currentLock = String(parseInt(currentLock) + 1);
 	replace();
 }
